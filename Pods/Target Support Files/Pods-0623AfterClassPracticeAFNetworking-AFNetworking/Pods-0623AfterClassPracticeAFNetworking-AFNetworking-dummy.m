@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_0623AfterClassPracticeAFNetworking_AFNetworking : NSObject
+@end
+@implementation PodsDummy_Pods_0623AfterClassPracticeAFNetworking_AFNetworking
+@end
