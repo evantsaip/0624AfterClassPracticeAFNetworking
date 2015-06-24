@@ -1,9 +1,89 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SH4-Wl-Jdc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4pE-QN-KQE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--BeginAC View Controller-->
+        <scene sceneID="v3u-tR-Sgy">
+            <objects>
+                <viewController id="S7a-1a-luI" customClass="BeginACViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3pG-h3-GHD"/>
+                        <viewControllerLayoutGuide type="bottom" id="r4f-ei-LEE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r1W-1E-nLF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHH-xK-02C">
+                                <rect key="frame" x="103" y="348" width="114" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.46274513006210327" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cfc-tK-a7s" kind="push" id="cad-zx-JIc"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ACLoginPic" translatesAutoresizingMaskIntoConstraints="NO" id="lS7-70-D39">
+                                <rect key="frame" x="47" y="116" width="226" height="55"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12759560032894737" green="0.11726459703947369" blue="0.14761513157894737" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="27O-m0-Q3c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCi-ph-RIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-446" y="-112"/>
+        </scene>
+        <!--First User Pass View Controller-->
+        <scene sceneID="rXG-dc-nmc">
+            <objects>
+                <viewController id="cfc-tK-a7s" customClass="FirstUserPassViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kvm-5t-K2s"/>
+                        <viewControllerLayoutGuide type="bottom" id="9kg-xm-ogT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fb9-1i-iXz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dpv-Pj-ygI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OPM-o2-HUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="-112"/>
+        </scene>
+        <!--Begin Tab Bar View Controller-->
+        <scene sceneID="6SA-O1-iSJ">
+            <objects>
+                <viewController storyboardIdentifier="TEA" id="t3a-tY-zdz" customClass="BeginTabBarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OVx-c2-QSR"/>
+                        <viewControllerLayoutGuide type="bottom" id="0lR-bd-A6V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ghv-TX-JMa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XS-fN-HMP">
+                                <rect key="frame" x="137" y="242" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="0.36470589040000001" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m1I-Ud-LEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="565"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -23,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181.33333333333334" y="298.19999999999999"/>
+            <point key="canvasLocation" x="713" y="298"/>
         </scene>
         <!--Courses Table View Controller-->
         <scene sceneID="8tD-6W-5KO">
@@ -49,9 +129,30 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70Y-ZA-Bng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597" y="298"/>
+            <point key="canvasLocation" x="1129" y="298"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mPP-R0-pFj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4pE-QN-KQE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSF-Ds-1Az">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S7a-1a-luI" kind="relationship" relationship="rootViewController" id="Kke-U4-QG0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xp5-YT-iK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-978" y="-112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ACLoginPic" width="418" height="100"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
