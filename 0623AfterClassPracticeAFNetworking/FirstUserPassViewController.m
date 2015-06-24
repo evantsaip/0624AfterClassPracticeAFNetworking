@@ -42,13 +42,21 @@
     _correctUser = @"Evan";
     _correctPass = @"1111";
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:@"My Title"
-                                  message:@"Enter User Credentials"
+                                  alertControllerWithTitle:@"Login"
+                                  message:@"Enter Username & Password"
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style: UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-
-                                               }];
+        if (([_correctPass isEqualToString:_insertPass])&&([_correctUser isEqualToString:_insertUser])) {
+            NSLog(@"Right");
+            [self presetAction];
+        }
+        else {
+//            NSLog(@"Wrong");
+            [self errorMessageLogin];
+        }
+        }
+    ];
     UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
         handler:^(UIAlertAction * action) {
             [alert dismissViewControllerAnimated:YES completion:nil];
@@ -70,13 +78,30 @@
     
 }
 
+-(void)errorMessageLogin{
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Error"
+                                  message:@"Enter Username & Password"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+
+    [alert addAction:cancel];
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (void)saveUsername:(UITextField *)username {
-    _correctUser = username.text;
-    NSLog(@"%@",_correctUser);
+    _insertUser = username.text;
+    NSLog(@"%@",_insertUser);
 }
 - (void)savePassword:(UITextField *)password {
-    _correctPass = password.text;
-    NSLog(@"%@",_correctPass);
+    _insertPass = password.text;
+    NSLog(@"%@",_insertPass);
 }
 
 @end
