@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FirstUserPassViewController.h"
 @interface BeginTabBarViewController : UIViewController
 
 @end
