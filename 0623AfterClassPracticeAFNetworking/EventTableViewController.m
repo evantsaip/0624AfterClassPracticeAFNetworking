@@ -9,15 +9,16 @@
 #import "EventTableViewController.h"
 
 @interface EventTableViewController ()
-@property (strong,nonatomic) NSArray *eventImg;
+
 @property (strong,nonatomic) NSArray *eventTest;
 @property (strong,nonatomic) NSArray *eventlab1;
 @property (strong,nonatomic) NSArray *eventLab2;
 @property (strong,nonatomic) NSArray *eventLabl3;
 @property (strong,nonatomic) NSDictionary *eventPost;
-@property (strong,nonatomic) NSString *eventDate;
-@property (strong,nonatomic) NSString *eventName;
-@property (strong,nonatomic) NSArray *eventContent;
+@property (strong,nonatomic) NSMutableArray *eventImg;
+@property (strong,nonatomic) NSMutableArray *eventDate;
+@property (strong,nonatomic) NSMutableArray *eventName;
+@property (strong,nonatomic) NSMutableArray *eventContent;
 //@property (strong,nonatomic) NSString
 @end
 
@@ -27,11 +28,7 @@
     [super viewDidLoad];
     NSLog(@"Here is Event");
    [self getData];
-////    _eventPost = @{@"eventImage":[UIImage imageNamed:@"Image0"],
-//                   @"eventTitle":_eventLabl1,
-//                   @"eventTime":_eventLabl2,
-//                   @"eventTitle2":_eventLabl3,};
-    
+////
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -61,6 +58,11 @@
 
 -(void)getData {
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    
+    _eventContent = [[NSMutableArray alloc]init];
+    _eventName = [[NSMutableArray alloc]init];
+    _eventDate = [[NSMutableArray alloc]init];
+    _eventImg = [[NSMutableArray alloc]init];
 //    [query getObjectInBackgroundWithId:@"lMQMOk8wjN" block:^(PFObject *eventName, NSError *error) {
 //
 //        NSLog(@"%@", eventName);
@@ -69,24 +71,25 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *arrResult, NSError *error) {
         NSLog(@"%@", arrResult);
         for (PFObject *obj in arrResult) {
-            // = obj[@"content"];
-            //_eventLabl3 =
-           // NSLog(@"%@", obj[@"content"]);
-            _eventContent = obj[@"content"];
-            _eventTest = arrResult;
+            [_eventImg addObject:obj[@"image"]];
+            [_eventName addObject:obj[@"eventName"]];
+            [_eventContent addObject:obj[@"content"]];
+            [_eventDate addObject:obj[@"dateString"]];
+            
         }
         
+        NSLog(@"%@",_eventContent);
     }];
 }
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:; forIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    
+//    return cell;
+//}
+
 
 /*
 // Override to support conditional editing of the table view.
