@@ -28,6 +28,7 @@
     [super viewDidLoad];
     NSLog(@"Here is Event");
    [self getData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,19 +44,44 @@
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *arrResult, NSError *error) {
         //        NSLog(@"%@", arrResult);
+        
+        _eventTest = arrResult;
+        
         for (PFObject *obj in arrResult) {
-            [_eventImg addObject:obj[@"image"]];
-            [_eventName addObject:obj[@"eventName"]];
-            [_eventContent addObject:obj[@"content"]];
-            [_eventDate addObject:obj[@"dateString"]];
-            _eventTest = arrResult;
-
+//            [_eventImg addObject:obj[@"image"]];
+//            [_eventName addObject:obj[@"eventName"]];
+//            [_eventContent addObject:obj[@"content"]];
+//            [_eventDate addObject:obj[@"dateString"]];
+            
+            //Load pic
+            NSLog(@"1");
+            PFFile *imageData = obj[@"image"];
+            NSLog(@"imagedata   %@", obj[@"image"]);
+            [imageData getDataInBackgroundWithBlock:^(NSData *imgData, NSError *error) {
+                            NSLog(@"2");
+                if(error == nil){
+                    //if i got the pic
+                    NSLog(@"yes");
+                    [_eventImg addObject:[UIImage imageWithData:imgData]];
+                }
+                else{
+                                        NSLog(@"NO");
+                    //if i don't
+                    [_eventImg addObject:[UIImage imageNamed:@"ACLoginPic"]];
+                }
+                            NSLog(@"3");
+            }];
         }
+        NSLog(@"%@", _eventImg);
         [self.tableView reloadData];
          NSLog(@"eventName = %@",_eventName);
+
         
-        // NSLog(@"%@",_eventContent);
+        
     }];
+    
+    
+    
 }
 
 
@@ -74,7 +100,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
 
     PFObject *event = _eventTest[indexPath.row];
-    PFFile *imageData = event[@"image"];
     
     
     UIImageView *eImgView = (UIImageView *)[cell viewWithTag:100];
@@ -86,21 +111,9 @@
     eLable2.text = event[@"dateString"];
     eTextField.text = event[@"content"];
 
-    eImgView.image = nil;
+    eImgView.image = _eventImg[indexPath.row];
 
-    [imageData getDataInBackgroundWithBlock:^(NSData *imgData, NSError *error) {
-        
-        if(error == nil){
-            //if i got the pic
-            eImgView.image = [UIImage imageWithData:imgData];
-            eImgView.backgroundColor = [UIColor clearColor];
-        }
-        else{
-            //if i don't
-            eImgView.image = nil;
-            eImgView.backgroundColor = [UIColor grayColor];
-        }
-    }];
+    
     
     return cell;
     
