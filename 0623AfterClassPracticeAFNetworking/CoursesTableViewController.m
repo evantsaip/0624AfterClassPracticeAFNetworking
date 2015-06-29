@@ -58,6 +58,7 @@
              _courses = responseObject[@"courses"];
              [self.tableView reloadData];
         NSLog(@"JSON: %@", responseObject);
+             NSLog(@"Success");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-0623AfterClassPracticeAFNetworking-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-0623AfterClassPracticeAFNetworking-Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-0623AfterClassPracticeAFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>505FD6F9B31B3C4615594686</key>
+		<key>22A77579438B8EC8403CA5EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60243C936D54C8DA9F32D30B</key>
+		<key>5B7ADACCE8807EC7EA320A4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFDE40A5551484CB44FF3A35</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CFA69F676EB0F697A4A40579</key>
 		<dict>
 			<key>primary</key>
 			<true/>
