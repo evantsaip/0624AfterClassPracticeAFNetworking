@@ -9,9 +9,5 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 @interface EventTableViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UIImageView *eventImage;
-@property (weak, nonatomic) IBOutlet UILabel *eventLabl1;
-@property (weak, nonatomic) IBOutlet UILabel *eventTime;
-@property (weak, nonatomic) IBOutlet UILabel *eventLabl2;
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		48B6A90CE17221B813321609 /* libPods-0623AfterClassPracticeAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD467D86334F3C18F19251B /* libPods-0623AfterClassPracticeAFNetworking.a */; };
 		A717C4831B40DB3700322017 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A717C4821B40DB3700322017 /* EventTableViewController.m */; };
+		A717C4BE1B41654900322017 /* CustTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A717C4BD1B41654900322017 /* CustTableViewCell.m */; };
 		A775678D1B3AA76100A32A5A /* CoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A775678C1B3AA76100A32A5A /* CoursesTableViewController.m */; };
 		A77567931B3ACCD400A32A5A /* BeginACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77567921B3ACCD400A32A5A /* BeginACViewController.m */; };
 		A77567961B3ACD4800A32A5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77567951B3ACD4800A32A5A /* ViewController.m */; };
@@ -38,6 +39,8 @@
 		8FD467D86334F3C18F19251B /* libPods-0623AfterClassPracticeAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-0623AfterClassPracticeAFNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A717C4811B40DB3700322017 /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
 		A717C4821B40DB3700322017 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
+		A717C4BC1B41654900322017 /* CustTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustTableViewCell.h; sourceTree = "<group>"; };
+		A717C4BD1B41654900322017 /* CustTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustTableViewCell.m; sourceTree = "<group>"; };
 		A775678B1B3AA76100A32A5A /* CoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesTableViewController.h; sourceTree = "<group>"; };
 		A775678C1B3AA76100A32A5A /* CoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesTableViewController.m; sourceTree = "<group>"; };
 		A77567911B3ACCD400A32A5A /* BeginACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeginACViewController.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				A7965EA81B3AA1D200D549FC /* Supporting Files */,
 				A717C4811B40DB3700322017 /* EventTableViewController.h */,
 				A717C4821B40DB3700322017 /* EventTableViewController.m */,
+				A717C4BC1B41654900322017 /* CustTableViewCell.h */,
+				A717C4BD1B41654900322017 /* CustTableViewCell.m */,
 			);
 			path = 0623AfterClassPracticeAFNetworking;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7965EAE1B3AA1D200D549FC /* AppDelegate.m in Sources */,
+				A717C4BE1B41654900322017 /* CustTableViewCell.m in Sources */,
 				A77567991B3ACEC100A32A5A /* FirstUserPassViewController.m in Sources */,
 				A775679C1B3AD76C00A32A5A /* BeginTabBarViewController.m in Sources */,
 				A775678D1B3AA76100A32A5A /* CoursesTableViewController.m in Sources */,
