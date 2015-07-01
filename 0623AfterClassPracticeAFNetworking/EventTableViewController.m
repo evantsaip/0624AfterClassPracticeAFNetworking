@@ -7,6 +7,7 @@
 //
 
 #import "EventTableViewController.h"
+#import "webViewController.h"
 
 @interface EventTableViewController ()
 
@@ -19,7 +20,8 @@
 @property (strong,nonatomic) NSMutableArray *eventDate;
 @property (strong,nonatomic) NSMutableArray *eventName;
 @property (strong,nonatomic) NSMutableArray *eventContent;
-
+@property (strong,nonatomic) NSMutableArray *eventUrl;
+@property (strong, nonatomic) NSString *url;
 @end
 
 @implementation EventTableViewController
@@ -28,6 +30,44 @@
     [super viewDidLoad];
     NSLog(@"Here is Event");
    [self getData];
+    
+    /////////////////////////////////////////////////////////
+    
+    
+    PFObject *event= [PFObject objectWithClassName:@"Event"];
+    event[@"content"] = @"Evan";
+    event[@"eventDate"] = @"2015/07/1";
+    event[@"eventName"] = @"Hello2";
+    event[@"eventURL"] = @"";
+    [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ////////////////////////////////////////////////////////
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +80,7 @@
     _eventName = [[NSMutableArray alloc]init];
     _eventDate = [[NSMutableArray alloc]init];
     _eventImg = [[NSMutableArray alloc]init];
+    _eventUrl = [[NSMutableArray alloc]init];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *arrResult, NSError *error) {
         //        NSLog(@"%@", arrResult);
@@ -48,12 +89,12 @@
             [_eventName addObject:obj[@"eventName"]];
             [_eventContent addObject:obj[@"content"]];
             [_eventDate addObject:obj[@"dateString"]];
+            [_eventUrl addObject:obj [@"eventURL"]];
             _eventTest = arrResult;
-
         }
         [self.tableView reloadData];
-         NSLog(@"eventName = %@",_eventName);
-        
+        // NSLog(@"eventName = %@",_eventName);
+        NSLog(@"eventURL = %@",_eventUrl);
         // NSLog(@"%@",_eventContent);
     }];
 }
@@ -80,7 +121,10 @@
     UIImageView *eImgView = (UIImageView *)[cell viewWithTag:100];
     UILabel *eLable1 = (UILabel *)[cell viewWithTag:200];
     UILabel *eLable2 = (UILabel *)[cell viewWithTag:300];
-    UITextField * eTextField = (UITextField *)[cell viewWithTag:400];
+    UITextField *eTextField = (UITextField *)[cell viewWithTag:400];
+    UIButton *eButton = (UIButton *) [cell viewWithTag:500];
+    eButton.tag = indexPath.row;
+    [eButton addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
     
     eLable1.text = event[@"eventName"];
     eLable2.text = event[@"dateString"];
@@ -106,6 +150,16 @@
     
    
 }
+
+- (void)push:(UIButton *)sender {
+    self.url = _eventUrl[sender.tag];
+    [self performSegueWithIdentifier:@"cellToNext" sender:self];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    webViewController *destinationVC = segue.destinationViewController;
+    destinationVC.url = self.url;
+}
+
 
 
 @end
