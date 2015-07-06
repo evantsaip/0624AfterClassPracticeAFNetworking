@@ -22,6 +22,7 @@
 @property (strong,nonatomic) NSMutableArray *eventContent;
 @property (strong,nonatomic) NSMutableArray *eventUrl;
 @property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) UIImage *justImg;
 @end
 
 @implementation EventTableViewController
@@ -38,7 +39,19 @@
     event[@"content"] = @"Evan";
     event[@"eventDate"] = @"2015/07/1";
     event[@"eventName"] = @"Hello2";
-    event[@"eventURL"] = @"";
+    event[@"eventURL"] = @"https://github.com/evantsaip";
+  
+    //event[@"]
+//    UIImage *img = [UIImage imageNamed:@"ssss"];
+//    NSData *imageData = UIImagePNGRepresentation(img);
+//    PFFile *imageFile = [PFFile fileWithName:@"ssss" data:imageData];
+//    PFObject *userPhoto = [PFObject objectWithClassName:@"image"];
+//    //userPhoto[@"imageName"] = @"My trip to Hawaii!";
+//    //userPhoto[@"imageFile"] = imageFile;
+//    [userPhoto saveInBackground];
+    
+    
+    
     [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.

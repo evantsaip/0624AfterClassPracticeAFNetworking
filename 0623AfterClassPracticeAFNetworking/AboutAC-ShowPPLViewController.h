@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 @interface AboutAC_ShowPPLViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *abACSegment;
 @property (weak, nonatomic) IBOutlet UIImageView *abACImage;
-@property (weak, nonatomic) IBOutlet UILabel *abACName;
-
-@property (weak, nonatomic) IBOutlet UITextView *abACTextField;
+@property (strong, nonatomic) IBOutlet UILabel *abACName;
+@property (strong, nonatomic) IBOutlet UITextView *abACTextField;
 @end
